@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/locations','Locations@getLocations');
+Route::get('/future-pollution-data','FuturePollutionDatas@getFuturePollutionData');
+Route::get('/pollution-data','PollutionDatas@getPollutionData');
