@@ -84,10 +84,11 @@ class PollutionDatas extends Controller
         //
     }
 
-    public function getPollutionData()
+    public function getPollutionData(Request $request)
     {
+        $locationId = $request->id;
         $pollutionModel = new PollutionData();
-        $pollutionData = $pollutionModel->getPollutionData();
+        $pollutionData = $pollutionModel->getPollutionData($locationId);
         return response()->json($pollutionData);
     }
 }

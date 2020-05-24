@@ -18,5 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/locations','Locations@getLocations');
-Route::get('/future-pollution-data','FuturePollutionDatas@getFuturePollutionData');
-Route::get('/pollution-data','PollutionDatas@getPollutionData');
+Route::get('/future-pollution-data/{id}','FuturePollutionDatas@getFuturePollutionData');
+Route::get('/pollution-data/{id}','PollutionDatas@getPollutionData');

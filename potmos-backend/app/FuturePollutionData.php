@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class FuturePollutionData extends Model
 {
     //
-    function getFuturePollutionData() {
-        $data = DB::table('future_pollution_data')->get();
+    function getFuturePollutionData(int $locationId) {
+        $data = DB::table('future_pollution_data')->where('location_id', $locationId)->latest('created_at')->first();
         return $data;
     }
 }

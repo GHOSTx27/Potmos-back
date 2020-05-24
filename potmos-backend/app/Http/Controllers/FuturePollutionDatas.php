@@ -83,10 +83,11 @@ class FuturePollutionDatas extends Controller
         //
     }
 
-    public function getFuturePollutionData()
+    public function getFuturePollutionData(Request $request)
     {
+        $locationId = $request->id;
         $futurePollutionModel = new FuturePollutionData();
-        $pollutionData = $futurePollutionModel->getFuturePollutionData();
+        $pollutionData = $futurePollutionModel->getFuturePollutionData($locationId);
         return response()->json($pollutionData);
     }
 }

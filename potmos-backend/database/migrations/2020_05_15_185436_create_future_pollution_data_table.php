@@ -15,6 +15,7 @@ class CreateFuturePollutionDataTable extends Migration
     {
         Schema::create('future_pollution_data', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('location_id');
             $table->decimal('nh3', 10, 3);
             $table->decimal('ch4', 10, 3);
             $table->decimal('co', 10, 3);
